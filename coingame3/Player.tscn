@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://bp2vwe2spakuo"]
+
+[ext_resource type="Script" uid="uid://dlo64hvpckpi3" path="res://Main.cs" id="1_kne1u"]
+[ext_resource type="Script" uid="uid://cpaiwpfcu7tg0" path="res://Player.cs" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://c4s2cxl4mtwy8" path="res://icon.svg" id="2_kne1u"]
+[ext_resource type="PackedScene" uid="uid://dsoah2bamm5qf" path="res://Coin.tscn" id="4_e80uo"]
+[ext_resource type="Texture2D" uid="uid://881iw3tixc6" path="res://Portal-PNG-Photos.png" id="5_cxr5p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+size = Vector2(130, 129)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tdg3f"]
+radius = 64.0078
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_kne1u")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_kpjcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(425, 326)
+texture = ExtResource("2_kne1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(427, 326)
+shape = SubResource("RectangleShape2D_hqtel")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(575, 324)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoinsLeftLabel" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 782.0
+offset_top = 18.0
+offset_right = 859.0
+offset_bottom = 41.0
+text = "Coins left:"
+
+[node name="ScoreLabel" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 11.0
+offset_right = 252.0
+offset_bottom = 34.0
+text = "Score:"
+
+[node name="CompleteLabel" type="Label" parent="HUD/Control"]
+visible = false
+layout_mode = 0
+offset_left = 434.0
+offset_top = 493.0
+offset_right = 688.0
+offset_bottom = 516.0
+text = "Level Complete"
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("4_e80uo")]
+position = Vector2(321, 80)
+
+[node name="Coin1" parent="Coins" instance=ExtResource("4_e80uo")]
+position = Vector2(707, 95)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("4_e80uo")]
+position = Vector2(-47, 88)
+
+[node name="Exit" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Exit"]
+position = Vector2(974, 525)
+scale = Vector2(0.465, 0.225)
+texture = ExtResource("5_cxr5p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+position = Vector2(975, 524)
+shape = SubResource("CircleShape2D_tdg3f")
