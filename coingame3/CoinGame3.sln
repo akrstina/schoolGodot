@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGame3", "CoinGame3.csproj", "{8AE0B50C-4BC4-4D14-B53C-164F9A8B3E41}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGame3", "CoinGame3.csproj", "{750CB628-F8AC-41A6-996A-089565F42B43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8AE0B50C-4BC4-4D14-B53C-164F9A8B3E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8AE0B50C-4BC4-4D14-B53C-164F9A8B3E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8AE0B50C-4BC4-4D14-B53C-164F9A8B3E41}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{8AE0B50C-4BC4-4D14-B53C-164F9A8B3E41}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{8AE0B50C-4BC4-4D14-B53C-164F9A8B3E41}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{8AE0B50C-4BC4-4D14-B53C-164F9A8B3E41}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{750CB628-F8AC-41A6-996A-089565F42B43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750CB628-F8AC-41A6-996A-089565F42B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750CB628-F8AC-41A6-996A-089565F42B43}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{750CB628-F8AC-41A6-996A-089565F42B43}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{750CB628-F8AC-41A6-996A-089565F42B43}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{750CB628-F8AC-41A6-996A-089565F42B43}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal

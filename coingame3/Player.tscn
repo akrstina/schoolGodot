@@ -65,13 +65,12 @@ text = "Level Complete"
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("4_e80uo")]
-position = Vector2(321, 80)
-
-[node name="Coin1" parent="Coins" instance=ExtResource("4_e80uo")]
-position = Vector2(707, 95)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("4_e80uo")]
-position = Vector2(-47, 88)
+position = Vector2(710, 74)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("4_e80uo")]
+position = Vector2(-56, 361)
 
 [node name="Exit" type="Area2D" parent="."]
 

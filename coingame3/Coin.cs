@@ -3,11 +3,14 @@ using System;
 
 public partial class Coin : Area2D
 {
+	private GPUParticles2D sparkle;
 	public override void _Ready()
 	{
 		// Register this coin with main so main knows the total number
 		var main = GetTree().CurrentScene as Main;
 		main?.RegisterCoin();
+		
+		sparkle = GetNodeOrNull<GPUParticles2D>("SparkleParticles");
 
 		// Connect body entered event
 		BodyEntered += OnBodyEntered;
@@ -22,8 +25,14 @@ public partial class Coin : Area2D
 			var main = GetTree().CurrentScene as Main;
 			main?.CoinCollected();
 
-			// Play sound here (optional) and then remove coin
-			QueueFree();
+			var audio = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+			audio?.Play();
+			if (sparkle != null)
+			{
+				sparkle.Emitting = true;
+			}
+		// Wait briefly before removing
+		GetTree().CreateTimer(0.2).Timeout += () => QueueFree();
 		}
 	}
 }

@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvb4fvwkqx8yy"]
+
+[ext_resource type="Script" uid="uid://wvyiib0v8umm" path="res://Spawner.cs" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://1dlld7wjc1tf" path="res://falling_object.tscn" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://c3s0xmh8rca4n" path="res://Main.cs" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://ckp0ii8wa7731" path="res://player.tscn" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://coxkfc0wr057h" path="res://Player.cs" id="3_lquwl"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_lquwl")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HUD/Control"]
+visible = false
+layout_mode = 0
+offset_left = 181.0
+offset_top = 21.0
+offset_right = 328.0
+offset_bottom = 44.0
+
+[node name="Label2" type="Label" parent="HUD/Control"]
+visible = false
+layout_mode = 0
+offset_left = 871.0
+offset_top = 23.0
+offset_right = 991.0
+offset_bottom = 46.0
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(0, -50)
+script = ExtResource("1_1bvp3")
+SpawnInterval = 0.0
+
+[node name="FallingObject2" parent="Spawner" instance=ExtResource("1_h2yge")]
+
+[node name="FallingObject" parent="Spawner" instance=ExtResource("1_h2yge")]
+position = Vector2(-490, -38)
+
+[node name="FallingObject3" parent="Spawner" instance=ExtResource("1_h2yge")]
+position = Vector2(138, -42)
+
+[node name="FallingObject4" parent="Spawner" instance=ExtResource("1_h2yge")]
+position = Vector2(-212, 1)
+
+[node name="FallingObject5" parent="Spawner" instance=ExtResource("1_h2yge")]
+position = Vector2(-351, 5)
+
+[node name="FallingObject6" parent="Spawner" instance=ExtResource("1_h2yge")]
+position = Vector2(252, 1)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_1bvp3")]
+position = Vector2(0, -2)
+script = ExtResource("3_lquwl")

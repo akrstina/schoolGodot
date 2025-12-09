@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://1dlld7wjc1tf"]
+
+[ext_resource type="Script" uid="uid://cvm4otjo7ua3m" path="res://FallingObject.cs" id="1_alosc"]
+[ext_resource type="Texture2D" uid="uid://cf6ug0mxi480a" path="res://icon.svg" id="1_v05kg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alosc"]
+
+[node name="FallingObject" type="Area2D"]
+script = ExtResource("1_alosc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(55.5, -178.5)
+scale = Vector2(0.179688, 0.195313)
+texture = ExtResource("1_v05kg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(55.5, -178.5)
+shape = SubResource("RectangleShape2D_alosc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
